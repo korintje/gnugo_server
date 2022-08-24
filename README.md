@@ -8,4 +8,4 @@ Simple server to make GNU Go accessible from local host browser
 4. Access `localhost:8080` by a browser
 
 # GNU Go API
-Cite "19.6 GTP command reference" in https://www.gnu.org/software/gnugo/gnugo_19.html#SEC192
+Cite "19.6 GTP command reference" in https://www.gnu.org/software/gnugo/gnugo_19.html#SEC196
