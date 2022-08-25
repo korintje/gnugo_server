@@ -2,9 +2,9 @@
 Simple server to make GNU Go accessible from local host browser 
 
 # Usage
-1. Download release zip (https://github.com/korintje/gnugo_server/archive/refs/tags/v0.0.1.1.zip)
+1. Download release zip (https://github.com/korintje/gnugo_server/releases/download/v0.0.2.2/dist_win.zip)
 2. Extract downloaded zip file
-3. Launch `gnugo-server-0.0.1.1/release_win/gnugo_server.exe`
+3. Launch `gnugo-server-0.0.3.2/release_win/gnugo_server.exe`
 4. Access `localhost:8080` by a browser
 
 It may be useful to register `gnugo_server.exe` as a start-up program.
