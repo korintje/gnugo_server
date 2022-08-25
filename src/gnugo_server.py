@@ -22,6 +22,7 @@ GNUGO = Popen(CMD, encoding='utf-8', stdin=PIPE, stdout=PIPE)
 class GoHandler(BaseHTTPRequestHandler):
     """Modified from: https://qiita.com/komorin0521/items/dfc02444a60180688e43"""
 
+
     """Need to solve CORS"""
     def do_OPTIONS(self):
         self.send_response(200, "ok")
@@ -33,6 +34,7 @@ class GoHandler(BaseHTTPRequestHandler):
 
 
     def do_POST(self):
+
         try:
             content_len = int(self.headers.get('content-length'))
             requestBody = json.loads(self.rfile.read(content_len).decode('utf-8'))
@@ -50,13 +52,10 @@ class GoHandler(BaseHTTPRequestHandler):
                     break
 
             # Respond as success (status code = 200)
-            response = { 'status': 200, 'output': "\n".join(lines) }
+            response = { 'status': 200, 'output': "".join(lines) }
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
-            # self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
-            # self.send_header("Access-Control-Allow-Headers", "Content-type")
             self.send_header('Access-Control-Allow-Origin', '*')
-            # self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
             self.end_headers()
             responseBody = json.dumps(response)
             print(f"ResponseBody: {responseBody}")

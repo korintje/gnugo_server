@@ -1,31 +1,30 @@
 <html>
   
   <body>
-    --- Successfully loaded index.html by korintje ---
-  </body>
+
+    <p>
+      <label>User move</label>
+      <input type="text" id="user_move">
+    </p>
+    
+    <button id="send_move">Send</button>
+    
+    <p>
+      <label>Message</label>
+      <input type="text" id="message" disabled>
+    </p>
+    
+    <p>
+      <label>CPU move</label>
+      <input type="text" id="cpu_move" disabled>
+    </p>
+
+    <button id="reset">Reset</button>
+    
+    <textarea id="board" style="width:100%; height:360px;"></textarea>    
   
-  <script>
-    fetch('http://127.0.0.1:8085', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({"command": "genmove_black"})
-    })
-    .then(response => response.text())
-    .then(text => {
-      data = JSON.parse(text);
-      if (data.status === 200) {
-        console.log("Command successfully sent!");
-        console.log(data);
-      } else {
-        let message = `${data.status} ${data.output}\n`;
-        console.error(data);
-      }
-    })
-    .catch(error => {
-      const message = `Failed to connect GNU Go API server: ${error}`;
-      alert(message);
-      console.error(message);
-    });
-  </script>
+  </body>
+
+  <script src='gnugo_client.js'></script>
 
 </html>
